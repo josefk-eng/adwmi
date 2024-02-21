@@ -1,0 +1,30 @@
+.header{
+    color: white;
+    font-weight: 600;
+    font-size: 0.8rem;
+
+
+    .top{
+        display: flex;
+        justify-content: space-between;
+        padding: 0.7rem 2.5rem;
+
+        .left{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        a{
+            display: flex;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .icon{
+            font-size: 14px;
+            cursor: pointer;
+        }
+    }
+}
