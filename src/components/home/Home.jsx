@@ -1,7 +1,7 @@
 import React from 'react'
 import './home.scss'
 import vid from '../../assets/videos/intro.mp4'
-import Navbar from '../navbar/Navbar'
+import Header from '../navbar/Header'
 
 function Home() {
     return (
@@ -18,7 +18,7 @@ function Home() {
                     </div>
                 </div>
                 <div className="bar">
-                    <Navbar  />
+                    <Header  />
                 </div>
                 <video src={vid} autoPlay loop muted/>
             </div>

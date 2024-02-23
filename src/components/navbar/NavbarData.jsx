@@ -73,10 +73,6 @@ export const NavbarData = [
         title:"icon",
         url: "",
         imageUrl:"../../assets/images/churchlogo.png",
-        submenu: {
-            title:"",
-            url: ""
-        }
     },
     {
         title:"EVENTS",
