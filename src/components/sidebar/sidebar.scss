@@ -1,0 +1,32 @@
+.side-wrapper{
+    height: 100%;
+    width: 20vw;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    padding: 5rem;
+
+    .close{
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+
+        .icon{
+            padding: 10px;
+            cursor: pointer;
+        }
+    }
+
+    .content{
+        padding: 1rem 0;
+
+
+        p{
+            font-weight: 600;
+            font-style: italic;
+            color: brown;
+        }
+    }
+}

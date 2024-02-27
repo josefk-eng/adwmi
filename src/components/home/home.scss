@@ -1,5 +1,15 @@
-.wrapper{
+@keyframes slide-out{
 
+    100%{
+        transform: translateX(-100%);
+    }
+
+    0%{
+        transform: translateX(0);
+    }
+}
+.wrapper{
+    position: relative;
 
     .intro{
         position: relative;
@@ -73,5 +83,14 @@
             }
         }
     
+    }
+
+    .side{
+        display: none;
+        // animation: slide-out 3s ease-in-out both;
+
+        &.show{
+            display: flex;
+        }
     }
 }

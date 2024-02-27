@@ -1,3 +1,31 @@
+@keyframes slide-in{
+    0%{
+        // transform: translateY(-10%);
+        height: 0;
+    }
+
+    50%{
+        height: 100%;
+    }
+
+    75%{
+        height: 150%;
+    }
+
+    100%{
+        // transform: translateY(0%);
+        max-height: 300%;
+    }
+}
+
+@keyframes slide-away{
+    0%{
+        transform: translateX(-20%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
 .desktop-nav{
 
     .menus{
@@ -41,21 +69,21 @@
                 color: brown;
                 min-width: 15rem;
                 display: none;
-                padding: 20px 0px;
-                border-radius: 5px;
+                padding: 1rem 0px;
+                // border-radius: 5px;
                 font-style: italic;
+                overflow: hidden;
+                animation: slide-in 200ms ease-in-out both;
                 &.show{
                     display: block;
                 }
 
                 li{
                     padding: 0.5rem;
-                    &:hover{
-                        transition: all 0.25s ease-in-out;
-                        a::before{
-                            content: ">>";
-                            padding-right: 10px;
-                        }
+                    // animation: slide-away 3s ease-in-out both;
+                    a:hover::before{
+                        content: "\2014";
+                        padding-right: 10px;
                     }
                 }
             }

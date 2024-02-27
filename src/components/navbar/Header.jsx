@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import FacebookIcon from '@mui/icons-material/Facebook';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -9,8 +9,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import Navbar from './Navbar';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
+import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
+function Header({toggleSidebar}) {
 
-function Header() {
+    const [search, setSearch] = useState(false);
+    const toggleSearch = () => setSearch(!search);
     return (
         <header className='header'>
             <div className="top">
@@ -35,14 +38,20 @@ function Header() {
                 <div className="additions">
                     <div className="calendar">
                         <CalendarMonthIcon />
+                        <p>0</p>
                     </div>
-                    <div className="search">
+                    <div className="search-btn" onClick={toggleSearch}>
                         <SearchIcon />
                     </div>
-                    <div className="location">
+                    <div className="location" onClick={toggleSidebar}>
                         <FmdGoodIcon />
                     </div>
                 </div>
+
+                <div className={`search ${search ? "show-search":""}`}>
+                    <input type="text" placeholder='Search....' />
+                <span onClick={toggleSearch}><HighlightOffOutlinedIcon /></span>
+            </div>
             </div>
         </header>
     )
