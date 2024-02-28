@@ -91,6 +91,25 @@
             .calendar{
                 cursor: pointer;
                 padding: 5px 10px;
+
+
+                .events{
+                    position: absolute;
+                    background-color: white;
+                    color: brown;
+                    min-width: 10rem;
+                    padding: 20px 26px;
+                    right: 0;
+                    margin-top: 0.5rem;
+                    border-radius: 4px;
+                    width: 100%;
+                    text-align: center;
+                    display: none;
+
+                    &.show{
+                        display: block;
+                    }
+                }
             }
 
             .search-btn{

@@ -10,10 +10,23 @@ import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import Navbar from './Navbar';
 import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
 import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
+import Search from './Search';
 function Header({toggleSidebar}) {
 
     const [search, setSearch] = useState(false);
     const toggleSearch = () => setSearch(!search);
+    const events = [];
+
+    const [myEvents, showEvents] = useState(false);
+    const toggleEvents = () => showEvents(!myEvents);
+
+
+    // const utilizeFocus = () => {
+    //     const ref = React.createRef();
+    //     const setFocus = () => {ref.current && ref.current.focus()}
+
+    //     return {setFocus, ref}
+    // }
     return (
         <header className='header'>
             <div className="top">
@@ -36,9 +49,18 @@ function Header({toggleSidebar}) {
                 </a>
                 <Navbar />
                 <div className="additions">
-                    <div className="calendar">
+                    <div className="calendar" onClick={toggleEvents}>
                         <CalendarMonthIcon />
                         <p>0</p>
+                        <div className={`events ${myEvents ? "show":""}`}>
+                            {
+                                events && events.length > 0 ? (
+                                    <ul></ul>
+                                ):(
+                                    <span>No Events Yet</span>
+                                )
+                            }
+                        </div>
                     </div>
                     <div className="search-btn" onClick={toggleSearch}>
                         <SearchIcon />
@@ -47,11 +69,7 @@ function Header({toggleSidebar}) {
                         <FmdGoodIcon />
                     </div>
                 </div>
-
-                <div className={`search ${search ? "show-search":""}`}>
-                    <input type="text" placeholder='Search....' />
-                <span onClick={toggleSearch}><HighlightOffOutlinedIcon /></span>
-            </div>
+                <Search search={search} toggleSearch={toggleSearch} />
             </div>
         </header>
     )
